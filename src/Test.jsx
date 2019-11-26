@@ -6,13 +6,20 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Masonry from 'react-masonry-component';
 import Image from 'react-shimmer';
-import Spinner from './Spinner'
+import notification from '../src/notification'
+import { askForPermissioToReceiveNotifications } from './push-notification';
+
+// import "node_modules/video-react/dist/video-react.css";
+import { Player, PosterImage } from 'video-react';
 class Test extends Component {
     constructor() {
         super()
         this.state = {
             allValues: [],
-            opacity: true
+            opacity: true,
+
+            videoURL: 'http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4'
+
         }
     }
     componentDidMount() {
@@ -26,9 +33,13 @@ class Test extends Component {
 
         })
         setTimeout(() => {
-            this.setState({
-                opacity: false
-            }, 2000)
+            this.handleOpacity()
+        }, 2000)
+
+    }
+    handleOpacity() {
+        this.setState({
+            opacity: false
         })
     }
     render() {
@@ -41,15 +52,21 @@ class Test extends Component {
         return (
             <div>
 
-                <AppBar style={{ backgroundColor: "white" }} position='fixed'>
-                    <Toolbar >
+                <AppBar style={{ backgroundColor: "white" }} position='sticky'>
+                    <Toolbar className='toolBar' >
                         <div style={{ color: "#000000" }}>
                             Title Here
                         </div>
-                        <div>
-                            <div  style={{ color: "#000000" }}>Home</div>
-                            <div  style={{ color: "#000000" }}>contact us</div>
-                            <div  style={{ color: "#000000" }}>Blogs</div>
+                        <div className='newHeader'>
+                            <div
+                                className='Home'
+                            >Home</div>
+                            <div
+                                className='contact'
+                            >Contact us</div>
+                            <div
+                                className='Blogs'
+                            >Blogs</div>
 
                         </div>
                     </Toolbar>
@@ -68,12 +85,20 @@ class Test extends Component {
                     </div>
 
                 </Carousel>
+                <button onClick={askForPermissioToReceiveNotifications} >
+                    firebase
+    </button>
+                {/* <video id="background-video"  autoPlay loop muted>
+                    <source src={this.state.videoURL} type="video/mp4" />
+                    <source src={this.state.videoURL} type="video/ogg" />
+                    Your browser does not support the video tag.
+            </video> */}
                 <div className='mainDiv'>
                     <Masonry>
-                        <Image src={require('../src/assets/manali.jpg')}
+                        <img src={require('../src/assets/manali.jpg')}
 
 
-                            className={effect} style={{ height: 250 }} />
+                            className={effect} />
                         <img src={require('../src/assets/kerla.webp')} className={effect} style={{ height: 250 }} />
 
                         <img src={require('../src/assets/pataya.webp')} className={effect} />
