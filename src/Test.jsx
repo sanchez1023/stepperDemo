@@ -7,6 +7,7 @@ import { Carousel } from 'react-responsive-carousel';
 import Masonry from 'react-masonry-component';
 import Image from 'react-shimmer';
 import notification from '../src/notification'
+import Iframe from 'react-iframe'
 import { askForPermissioToReceiveNotifications } from './push-notification';
 
 // import "node_modules/video-react/dist/video-react.css";
@@ -51,40 +52,57 @@ class Test extends Component {
         var effect = this.state.opacity ? 'imagesOpacity' : 'images'
         return (
             <div>
-
-                <AppBar style={{ backgroundColor: "white" }} position='sticky'>
+                <div>
+                    <img src={require('./assets/background.jpg')} style={{ height: 500, width: '100%' }} />
+                </div>
+                <AppBar style={{ backgroundColor: '#ffffff00', top: 0 }} position='fixed'>
                     <Toolbar className='toolBar' >
-                        <div style={{ color: "#000000" }}>
+                        <div style={{ color: "#ffffff" }}>
                             Title Here
                         </div>
                         <div className='newHeader'>
-                            <div
-                                className='Home'
-                            >Home</div>
-                            <div
-                                className='contact'
-                            >Contact us</div>
-                            <div
-                                className='Blogs'
-                            >Blogs</div>
+                            <div>
+                                <div
+                                    className='Home'
+                                >Home</div>
+                                <div className='homeBottom'>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    className='contact'
+                                >Contact us</div>
+                                <div className='homeBottom'>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    className='Blogs'
+                                >Blogs</div>
+                                <div className='homeBottom'>
+
+                                </div>
+                            </div>
 
                         </div>
                     </Toolbar>
                 </AppBar>
-                <Carousel swipeable={true} showThumbs={false}
+                {/* <Carousel swipeable={true} showThumbs={false}
                     dynamicHeight={true}
-                >
-                    <div>
-                        <img src={require('../src/assets/kerla.webp')}
-                        />
-                        {/* <p className="legend">Legend 1</p> */}
-                    </div>
-                    <div>
-                        <img src={require('../src/assets/pataya.webp')} />
-                        {/* <p className="legend">Legend 2</p> */}
-                    </div>
+                > */}
+                {/* <div>
+                    <img src={require('../src/assets/kerla.webp')}
+                    />
+                    
+                </div> */}
+                {/* <div>
+                    <img src={require('../src/assets/pataya.webp')} />
+                
+                </div> */}
 
-                </Carousel>
+                {/* </Carousel> */}
                 <button onClick={askForPermissioToReceiveNotifications} >
                     firebase
     </button>
@@ -94,6 +112,12 @@ class Test extends Component {
                     Your browser does not support the video tag.
             </video> */}
                 <div className='mainDiv'>
+                    <div>
+                        <div>
+
+                        </div>
+
+                    </div>
                     <Masonry>
                         <img src={require('../src/assets/manali.jpg')}
 
@@ -111,6 +135,20 @@ class Test extends Component {
 
                     </Masonry>
 
+                </div>
+                <div className='footer'>
+                    <div>
+
+                    </div>
+                    <div className='addressIframe'>
+                        <Iframe url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4299.5546616816455!2d72.9628860378745!3d19.167587908897474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa8c957a40c4d8de9!2sNew%20PMGP%20CHS!5e0!3m2!1sen!2sin!4v1566839777046!5m2!1sen!2sin"
+                            width="100%"
+                            height="100%"
+                            id="myId"
+                            className="myClassname"
+                            display="initial"
+                            position="relative" />
+                    </div>
                 </div>
             </div>
         );
