@@ -112,13 +112,66 @@ class Test extends Component {
                     Your browser does not support the video tag.
             </video> */}
                 <div className='mainDiv'>
-                    <div>
-                        <div>
-
+                    <div className='exploreDiv'>
+                        <div className='exploreBlock'>
+                            <div>
+                                <img src={require('./assets/adventure.jpg')} style={{ height: 80, width: 120, borderRadius: 5 }} />
+                            </div>
+                            <div style={{ marginLeft: 5 }}>
+                                Adventure
+                            </div>
                         </div>
+                        <div className='exploreBlock'>
+                            <div>
+                                <img src={require('./assets/adventure.jpg')} style={{ height: 75, width: 100, borderRadius: 5 }} />
+                            </div>
+                            <div style={{ marginLeft: 5 }}>
+                                Adventure
+                            </div>
+                        </div>
+                        <div className='exploreBlock'>
+                            <div>
+                                <img src={require('./assets/adventure.jpg')} style={{ height: 75, width: 100, borderRadius: 5 }} />
+                            </div>
+                            <div style={{ marginLeft: 5 }}>
+                                Adventure
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='tourScroll'>
+                            <div className='tours'>
+                                <img src={require('./assets/norway.webp')} className="tourImages" />
+                                <div className='overlay'>
+                                    <div className='tourText'>
+                                        TOUR DETAILS
+    
+                                </div>
+                                </div>
+                            </div>
+                            <div className='tours'>
+                                <img src={require('./assets/norway.webp')} className="tourImages" />
+                                <div className='overlay'>
+                                    <div className='tourText'>
+                                        TOUR DETAILS
+    
+                                </div>
+                                </div>
+                            </div>
+                            <div className='tours'>
+                                <img src={require('./assets/norway.webp')} className="tourImages" />
+                                <div className='overlay'>
+                                    <div className='tourText'>
+                                        TOUR DETAILS
+    
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
 
                     </div>
-                    <Masonry>
+                    {/* <Masonry>
                         <img src={require('../src/assets/manali.jpg')}
 
 
@@ -133,7 +186,7 @@ class Test extends Component {
                         <img src={require('../src/assets/thailand.jpg')} className={effect} />
 
 
-                    </Masonry>
+                    </Masonry> */}
 
                 </div>
                 <div className='footer'>
