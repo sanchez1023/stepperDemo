@@ -37,7 +37,13 @@
   flex-direction : row;
 
 }
+.newHeader {
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  width          : 50%;
 
+}
 @media screen and (max-width: 600px) {
   .images {
     margin    : 0px;
@@ -45,12 +51,8 @@
     transition: 1s;
   }
 
-  .newHeader {
-    display        : flex;
-    flex-direction : row;
-    justify-content: space-between;
-    width          : 50%;
-
+  .newHeader{
+    display: none;
   }
 
 
@@ -66,8 +68,19 @@
   }
 
   .footer {
-    width: 100%;
+    width: 120%;
   }
+  .newHeader{
+    display: none;
+  }
+  .expanionImage {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+    margin: 10px;
+  }
+  
 }
 
 .imagesOpacity {
@@ -120,12 +133,12 @@
 }
 
 .Home:hover {
-  color : orange;
+  color : #e97c33;
   cursor: pointer;
 }
 
 .contact:hover {
-  color: orange;
+  color: #e97c33;
 
   cursor: pointer;
 }
@@ -143,7 +156,7 @@
 
 .homeBottom::after {
   cursor               : pointer;
-  background-color     : rgb(247, 132, 25);
+  background-color     : #e97c33;
   border-radius        : 2px;
   /* bottom            : calc(50% - 16px); */
   content              : '';
@@ -191,13 +204,13 @@
 }
 
 .tours {
-  position: relative;
+  position     : relative;
   border-radius: 5px;
 }
 
 .tourText {
 
-  color        : orange;
+  color        : #e97c33;
   font-size    : 20px;
   position     : relative;
   top          : 50%;
@@ -226,13 +239,16 @@
 }
 
 .tours {
-  display       : flex;
-  flex-direction: row;
-  margin        : 10px;
-  padding       : 5px;
+  display         : flex;
+  flex-direction  : column;
+  margin          : 10px;
+  justify-content : space-around;
+  align-items     : center;
+  background-color: white;
+  width           : 255px;
 
-  width : 300px;
-  height: 257px;
+  height    : 380px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px !important;
 
 }
 
@@ -241,26 +257,308 @@
 
 
 .overlay {
-  position: absolute;
-  top     : 0;
-  bottom  : 0;
-  left    : 0;
-  right   : 0;
-  height  : 300px;
-  width   : 257px;
-  opacity : 0;
-  border-radius        : 2px;
+  position        : absolute;
+  top             : 0;
+  bottom          : 0;
+  left            : 0;
+  right           : 0;
+  height          : 300px;
+  width           : 257px;
+  opacity         : 0;
+  border-radius   : 2px;
   transition      : .5s ease-in-out;
-  background-color:#f4efd3
+  background-color: #f4efd3
 }
 
 .tours:hover .overlay {
-  opacity    : .8;
-  
+  opacity: .8;
+  cursor : pointer;
+
+
+}
+
+.tourScroll {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : wrap;
+
+}
+
+.stickyHeader {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  position: sticky;
+  top     : 0;
+
+}
+
+.stickyDiv {
+
+  height        : 500px;
+  display       : flex;
+  flex-direction: row;
+  border        : solid;
+  border-width  : 2px;
+  border-color  : black;
+
+}
+
+.leftDiv {
+  position    : relative !important;
+  height      : 500px;
+  margin-right: 10px;
+  width       : 200px;
+
+  background-color: cadetblue;
+}
+
+.progress-bar {
+  height    : 5px;
+  background: #e97c33;
+  width     : 0%;
+}
+
+.progress-container {
+  width     : 100%;
+  height    : 8px;
+  background: transparent;
+}
+
+.enquiryText {
+  font-size: medium;
+  color    : white;
+}
+
+.enquiryDiv {
+  background-color: #e97c33;
+  height          : 20px;
+  width           : 150px;
+  position        : fixed;
+  display         : flex;
+  bottom          : 15px;
+  right           : 40px;
+  border-radius   : 7px;
+  font-size       : 17px;
+  position        : fixed;
+  z-index         : 5;
+  padding         : 5px;
+  justify-content : center;
+  align-items     : center;
+  margin-right    : 10px;
+  transition      : 0.4s;
+  flex-direction  : row;
+  justify-content : space-around;
+}
+
+.enquiryDiv:hover {
+  background-color: #2e2e2e;
+  cursor          : pointer;
+}
+
+.formDiv {
+  height          : 400px;
+  width           : 400px;
+  background-color: white;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  box-shadow      : rgba(0, 0, 0, 0.16) 0px 10px 10px !important;
+  bottom          : 70px;
+  right           : 40px;
+  border-radius   : 7px;
+  font-size       : 17px;
+  position        : fixed;
+  z-index         : 5;
+  transition      : 0.4s;
+  flex-direction  : column;
+}
+
+.form {
+  height         : 80%;
+  width          : 95%;
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  align-items    : center;
+  margin-top     : 20px;
+
+  /* background-color: thistle; */
+}
+
+.submitButton {
+  background-color: #e97c33;
+  color           : white;
+  height          : 40px;
+  width           : 100px;
+  border-radius   : 5px;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  animation       : 2s;
+}
+
+.nameAndphone {
+  display        : flex;
+  flex-direction : row;
+  width          : 100%;
+  justify-content: space-between;
+}
+
+.closeDiv {
+  bottom          : 15px;
+  right           : 40px;
+  border-radius   : 7px;
+  font-size       : 17px;
+  position        : fixed;
+  z-index         : 5;
+  height          : 45px;
+  width           : 45px;
+  border-radius   : 23px;
+  background-color: #e97c33;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  transition      : 0.4s;
+}
+
+.closeDiv:hover {
+  margin-top: -10px;
+}
+
+.closeIcon {
+  height           : 20px;
+  width            : 20px;
+  -webkit-animation: spin 1s ease-in infinite;
+  -moz-animation   : spin 1s ease-in infinite;
+  animation        : spin 1s ease-in infinite;
+}
+
+.formHeader {
+  height          : 40px;
+  width           : 100%;
+  background-color: #2e2e2e;
+  margin-top      : -20px;
+  display         : flex;
+  color           : white;
+  border-radius   : 7px 7px 0px 0px;
+  align-items     : center;
+  justify-content : center;
+}
+
+@-moz-keyframes spin {
+  50% {
+    -moz-transform: rotateX(90deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  50% {
+    -webkit-transform: rotateX(90deg);
+  }
+}
+
+@keyframes spin {
+  50% {
+    -webkit-transform: rotateX(90deg);
+    transform        : rotateX(90deg);
+  }
+}
+
+.headerDiv {
+  background-color: transparent;
+  background      : none;
+  top             : 0;
+  position        : fixed;
+  width           : 100%;
+}
+
+.headerDivAfter {
+  background-color: #2e2e2e;
+  top             : 0;
+  position        : fixed;
+  width           : 100%;
+  z-index         : 10;
+}
+
+.Home span:nth-child(1) {
+  left      : 0;
+  bottom    : -100%;
+  height    : 100%;
+  width     : 2px;
+  background: #2196f3
+}
+
+.Home:hover span:nth-child(1) {
+  bottom    : 0;
+  transition: .25s
+}
+
+.Home span:nth-child(3) {
+  right     : 0;
+  bottom    : -100%;
+  height    : 100%;
+  width     : 2px;
+  background: #2196f3
+}
+
+.Home:hover span:nth-child(3) {
+  bottom          : 0;
+  transition      : .25s;
+  transition-delay: .25s
+}
+
+.Home span:nth-child(2) {
+  top       : 0;
+  left      : -100%;
+  width     : 100%;
+  height    : 2px;
+  background: #2196f3
+}
+
+.Home:hover span:nth-child(2) {
+  left            : 0;
+  transition      : .25s;
+  transition-delay: .25s
+}
+
+.Home span:nth-child(4) {
+  bottom    : 0;
+  left      : -100%;
+  width     : 100%;
+  height    : 2px;
+  background: #2196f3
+}
+
+.Home:hover span:nth-child(4) {
+  left      : 0;
+  transition: .25s
+}
+
+.teamImage {
+  height: 195px;
+  width : 400px;
   
 }
-.tourScroll{
-  display: flex;
-  flex-direction: row;
-  
+
+.expanionImage {
+  display        : flex;
+  flex-direction : row-reverse;
+  align-items    : center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.chooseDiv {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  justify-content: center;
+}
+.whyHeader{
+  align-self: center;
+  font-size: 30px;
+}
+.whySummary{
+  color: #767676;
+  font-size: medium;
 }
