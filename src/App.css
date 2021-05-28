@@ -37,6 +37,7 @@
   flex-direction : row;
 
 }
+
 .newHeader {
   display        : flex;
   flex-direction : row;
@@ -44,6 +45,7 @@
   width          : 50%;
 
 }
+
 @media screen and (max-width: 600px) {
   .images {
     margin    : 0px;
@@ -51,7 +53,7 @@
     transition: 1s;
   }
 
-  .newHeader{
+  .newHeader {
     display: none;
   }
 
@@ -70,17 +72,19 @@
   .footer {
     width: 120%;
   }
-  .newHeader{
+
+  .newHeader {
     display: none;
   }
+
   .expanionImage {
     display        : flex;
     flex-direction : column;
     align-items    : center;
     justify-content: center;
-    margin: 10px;
+    margin         : 10px;
   }
-  
+
 }
 
 .imagesOpacity {
@@ -285,31 +289,40 @@
 }
 
 .stickyHeader {
-  position: sticky !important;
-  position: -webkit-sticky !important;
-  position: sticky;
-  top     : 0;
+  position   : sticky !important;
+  top        : 70px !important;
+  position   : sticky;
+  font-size  : 32px !important;
+  font-weight: bold;
+  color      : #484848;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 
 }
 
 .stickyDiv {
 
-  height        : 500px;
+  height        : 200px;
   display       : flex;
   flex-direction: row;
-  border        : solid;
-  border-width  : 2px;
-  border-color  : black;
+
+  border-width: 2px;
+
+  position  : relative;
+  margin-top: 20px;
 
 }
 
 .leftDiv {
-  position    : relative !important;
-  height      : 500px;
-  margin-right: 10px;
-  width       : 200px;
+  -webkit-box-direction: normal !important;
+  -webkit-box-orient   : vertical !important;
+  flex-direction       : column !important;
+  position             : relative !important;
+  width                : calc(33.3333% - 5.33333px) !important;
+  padding-right        : 64px !important;
+  display              : block !important;
+  flex                 : 0 0 auto !important;
 
-  background-color: cadetblue;
+
 }
 
 .progress-bar {
@@ -470,6 +483,7 @@
   top             : 0;
   position        : fixed;
   width           : 100%;
+  z-index         : 10;
 }
 
 .headerDivAfter {
@@ -537,28 +551,111 @@
 .teamImage {
   height: 195px;
   width : 400px;
-  
+
 }
 
 .expanionImage {
   display        : flex;
-  flex-direction : row-reverse;
-  align-items    : center;
+  flex-direction : column;
+  align-items    : flex-start;
   justify-content: center;
-  margin: 10px;
+  margin         : 10px;
+  
 }
 
 .chooseDiv {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+}
+
+.whyHeader {
+  align-self: center;
+  font-size : 30px;
+  transform: translateX(50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  transform: rotateY(360deg);
+  transition: 3s;
+  height: 80px;
+  padding: 10px;
+  box-shadow        : rgba(0, 0, 0, 0.15) 0px 5px 10px !important;
+  border-radius: 10px;
+
+}
+.whyHeaderbefore{
+  display: none;
+}
+
+.whySummary {
+  color    : #767676;
+  font-size: medium;
+}
+
+.informationDiv {
+  overflow-wrap: break-word !important;
+  font-family  : Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  font-size    : 18px !important;
+  font-weight  : 400 !important;
+  line-height  : 1.66667em !important;
+  color        : rgb(72, 72, 72) !important;
+  margin       : 0px !important;
+}
+
+.rightDiv {
   display       : flex;
   flex-direction: column;
   align-items   : center;
+}
+
+.getmoreDetails {
+  background-color: #e97c33;
+  color           : #e97c33;
+ 
+  border-radius   : 5px;
+}
+
+.aboutDiv {
+  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size  : 50px;
+  line-height: 1.43;
+  z-index    : 10;
+  color      : #484848;
+}
+
+.backgroundImage {
+  background-image     : url("http://4navigators.com/assets/images/b2-1680x1000.jpg");
+  height               : 500px;
+  width                : 100%;
+  background-attachment: fixed;
+  z-index              : 0;
+  position             : relative;
+  background-attachment: fixed;
+  background-position  : center;
+  background-repeat    : no-repeat;
+  background-size      : cover;
+}
+
+.contentDiv {
+  word-break: break-all;
+  display   : flex;
+  width     : 80%;
+  align-items: center;
   justify-content: center;
 }
-.whyHeader{
-  align-self: center;
-  font-size: 30px;
-}
-.whySummary{
-  color: #767676;
-  font-size: medium;
+
+.blogImage{
+  background-image     : url("./assets/blogs.jpg");
+  height               : 500px;
+  width                : 100%;
+  background-attachment: fixed;
+  z-index              : 0;
+  position             : relative;
+  background-attachment: fixed;
+  background-position  : center;
+  background-repeat    : no-repeat;
+  background-size      : cover;
 }

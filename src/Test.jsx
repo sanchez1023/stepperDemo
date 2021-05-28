@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,Suspense,lazy } from 'react';
 import { AppBar, TextField } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import Axios from 'axios';
@@ -17,6 +17,8 @@ import Typography from '@material-ui/core/Typography';
 
 import { askForPermissioToReceiveNotifications } from './push-notification';
 import { CATEGORY_SELECT } from './constants/actionTypes';
+import Header from './header';
+const Artists = lazy(() => import('../src/hooks'))
 const mapStateToProps = state => {
     console.log(state);
 
@@ -105,7 +107,10 @@ class Test extends Component {
             Enquiry: !this.state.Enquiry
         })
     }
+    
     render() {
+        console.log(this.props);
+        
         window.onscroll = () => this.scrollFnction()
         const allEmployee = this.state.allValues.map((item) => {
             console.log("emmm" + item.employee_name);
@@ -133,8 +138,9 @@ class Test extends Component {
                 <div>
                     <img src={require('./assets/background.jpg')} style={{ height: 500, width: '100%' }} />
                 </div>
-                <div className={this.state.header ? "headerDivAfter" : "headerDiv"}>
-                    {/* <AppBar className={this.state.header?"headerDivAfter" : "headerDiv"} position='fixed'> */}
+                <Header visible={this.state.header} props={this.props}/>
+                {/* <div className={this.state.header ? "headerDivAfter" : "headerDiv"}>
+                   
                     <Toolbar className='toolBar' >
                         <div style={{ color: "#ffffff" }}>
                             Title Here
@@ -187,7 +193,7 @@ class Test extends Component {
                     <div class="progress-container">
                         <div class="progress-bar" id="myBar"></div>
                     </div>
-                </div>
+                </div> */}
                 {/* </AppBar> */}
                 {/* <Carousel swipeable={true} showThumbs={false}
                     dynamicHeight={true}
@@ -226,16 +232,17 @@ class Test extends Component {
                                 <img src={require('./assets/adventure.jpg')} style={{ height: 75, width: 100, borderRadius: 5 }} />
                             </div>
                             <div style={{ marginLeft: 5 }}>
-                                Adventure
+                                Weekend
                             </div>
                         </div>
-                        {/* <div className='exploreBlock'>
+                        <div className='exploreBlock'>
                             <div>
                                 <img src={require('./assets/adventure.jpg')} style={{ height: 75, width: 100, borderRadius: 5 }} />
                             </div>
                             <div style={{ marginLeft: 5 }}>
-                                Adventure
-                            </div> */}
+                                Trips
+                            </div>
+                            </div>
                     </div>
                 </div>
                 <div>
@@ -248,7 +255,7 @@ class Test extends Component {
     Lighting Fast, Collaborative,Suppotive Team...
     </div>
     <div className='expanionImage'>
-        <div >
+        {/* <div >
         <ExpansionPanel>
         <ExpansionPanelSummary
        
@@ -316,10 +323,27 @@ class Test extends Component {
         </ExpansionPanelDetails>
       </ExpansionPanel>
      
+        </div> */}
+        {/* <div>
+           <img src={require('./assets/team.jpg')} className="teamImage"/> 
+        </div> */}
+          <Suspense fallback={<h1>Still Loading…</h1>}>
+        <Artists />
+      </Suspense>
+        <div>
+        <div className={this.state.header?'whyHeader':'whyHeaderbefore'} > 1. Value For money</div>
         </div>
         <div>
-           <img src={require('./assets/team.jpg')} className="teamImage"/> 
-        </div>
+        <div className={this.state.header?'whyHeader':'whyHeaderbefore'} >2. Fast Booking</div>
+            </div>
+            <div>
+            <div className={this.state.header?'whyHeader':'whyHeaderbefore'} >3. Diverse Destinations
+</div>
+            </div>
+            <div>
+            <div className={this.state.header?'whyHeader':'whyHeaderbefore'} >4. Affordable Journeys
+</div>
+            </div>
     </div>
   
 </div>
